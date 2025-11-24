@@ -14,12 +14,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <nav className="fixed w-full hover:bg-white/90 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-[var(--color-deep-teal)]">
-              Lord<span className="text-[var(--color-air-blue)]">.</span>
+          <div className="bg-white rounded-full">
+            <a href="#" className="">
+              <img src="/logo.png" alt="Lord Logo" className="h-13 m-1 rounded-full" />
             </a>
           </div>
           
@@ -31,7 +31,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   whileHover={{ scale: 1.1, color: 'var(--color-air-blue)' }}
-                  className="text-[var(--color-deep-teal)] px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className="text-deep-teal px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   {link.name}
                 </motion.a>
@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[var(--color-deep-teal)] hover:text-[var(--color-air-blue)] p-2"
+              className="text-deep-teal hover:text-air-blue p-2"
             >
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -66,7 +66,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-[var(--color-deep-teal)] hover:text-[var(--color-air-blue)] block px-3 py-2 rounded-md text-base font-medium"
+                  className="text-deep-teal hover:text-air-blue block px-3 py-2 rounded-md text-base font-medium"
                 >
                   {link.name}
                 </a>

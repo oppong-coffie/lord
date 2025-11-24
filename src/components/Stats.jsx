@@ -16,12 +16,15 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-16 bg-[var(--color-deep-teal)] text-white" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-deep-teal text-white relative overflow-hidden" ref={ref}>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, index) => (
             <div key={index} className="p-4">
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-[var(--color-air-blue)]">
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-air-blue">
                 {inView ? (
                   <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
                 ) : (
