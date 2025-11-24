@@ -1,120 +1,130 @@
-import React from 'react';
-import { FaGraduationCap, FaLeaf } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import React from "react";
+import { FaGraduationCap, FaLeaf } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Education = () => {
   const educationData = [
     {
-      date: '01/2027',
-      degree: 'Msc. International Relations',
-      school: 'University of East London – London, UK',
-      status: 'Upcoming',
-      logo: 'https://placehold.co/100x100/72A0C1/white?text=UEL',
+      date: "01/2027",
+      degree: "MSc. International Relations",
+      school: "University of East London – London, UK",
+      status: "Upcoming",
+      logo: "/london.jpg",
     },
     {
-      date: '12/2025',
-      degree: 'MPhil. Environmental Science',
-      school: 'University of Ghana – Legon, Accra',
-      status: 'Awaiting Graduation',
-      logo: 'https://placehold.co/100x100/006D77/white?text=UG',
+      date: "12/2025",
+      degree: "MPhil. Environmental Science",
+      school: "University of Ghana – Legon, Accra",
+      status: "Awaiting Graduation",
+      logo: "/ug.jpg",
     },
     {
-      date: '07/2022',
-      degree: 'Bsc. Biological Sciences: Biology Major',
-      school: 'University of Ghana – Legon, Accra',
-      status: 'Completed',
-      logo: 'https://placehold.co/100x100/006D77/white?text=UG',
+      date: "07/2022",
+      degree: "BSc. Biological Sciences (Biology Major)",
+      school: "University of Ghana – Legon, Accra",
+      status: "Completed",
+      logo: "/ug.jpg",
     },
     {
-      date: '07/2022',
-      degree: 'Program Diploma in Professional Career Skills',
-      school: 'International Business Management Institute (IBMI) – Berlin, Germany',
-      status: 'Completed',
-      logo: 'https://placehold.co/100x100/72A0C1/white?text=IBMI',
+      date: "07/2022",
+      degree: "Diploma in Professional Career Skills",
+      school: "IBMI – Berlin, Germany",
+      status: "Completed",
+      logo: "ib.png",
     },
   ];
 
-  // Generate random particles
-  const particles = Array.from({ length: 15 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 10 + 5,
-    duration: Math.random() * 20 + 10,
-  }));
-
   return (
-    <section id="education" className="py-20 bg-white relative overflow-hidden">
-      {/* Floating Particles */}
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          className="absolute bg-air-blue/10 rounded-full"
-          style={{
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-            width: particle.size,
-            height: particle.size,
-          }}
-          animate={{
-            y: [0, -100, 0],
-            x: [0, Math.random() * 50 - 25, 0],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      ))}
+    <section id="education" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-teal mb-4 flex items-center justify-center gap-3">
+      {/* Background Glow */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-air-blue/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-deep-teal/20 blur-[130px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-deep-teal flex justify-center items-center gap-4">
             <FaLeaf className="text-air-blue" /> Education
           </h2>
-          <div className="w-24 h-1 bg-air-blue mx-auto"></div>
-        </div>
+          <p className="mt-4 text-gray-600 text-lg max-w-xl mx-auto">
+            A refined look at my academic achievements, milestones, and professional training.
+          </p>
+          <div className="w-28 h-1.5 bg-gradient-to-r from-air-blue to-deep-teal mx-auto mt-6 rounded-full"></div>
+        </motion.div>
 
-        <div className="relative border-l-4 border-air-blue ml-4 md:ml-8 space-y-12">
-          {educationData.map((item, index) => (
-            <div 
-              key={index} 
-              className="relative pl-8 md:pl-12"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              {/* Timeline Dot */}
-              <div className="absolute -left-[14px] top-2 w-6 h-6 bg-air-blue rounded-full border-4 border-white shadow-md"></div>
-              
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
-                {/* School Logo */}
-                <div className="shrink-0">
-                  <img src={item.logo} alt={item.school} className="w-16 h-16 rounded-full object-cover border-2 border-gray-200" />
+        {/* Timeline */}
+        <div className="relative ml-6 md:ml-12">
+          
+          {/* Vertical Line */}
+          <div className="absolute left-2 top-0 w-1 bg-gradient-to-b from-air-blue to-deep-teal rounded-full h-full opacity-50"></div>
+          
+          <div className="space-y-16">
+            {educationData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: index * 0.15 }}
+                viewport={{ once: true }}
+                className="relative flex gap-6 md:gap-10"
+              >
+                
+                {/* Timeline Node */}
+                <div className="absolute -left-6 top-4">
+                  <div className="w-6 h-6 bg-white border-4 border-air-blue rounded-full shadow-lg"></div>
                 </div>
 
-                <div className="flex-1">
-                  <span className="inline-block px-3 py-1 bg-deep-teal text-white text-xs font-bold rounded-full mb-2">
-                    {item.date}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{item.degree}</h3>
-                  <h4 className="text-lg text-deep-teal font-medium mb-2 flex items-center gap-2">
-                    <FaGraduationCap /> {item.school}
+                {/* Logo */}
+                <img 
+                  src={item.logo} 
+                  alt={item.school}
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-xl shadow-md object-cover border border-gray-200 bg-white/60 backdrop-blur-sm md:mt-7"
+                />
+
+                {/* Content Card */}
+                <div className="flex-1 bg-white/70 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl p-6 md:p-7 transition-all duration-300">
+                  
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-3 py-1 bg-air-blue text-white text-xs font-semibold rounded-full shadow">
+                      {item.date}
+                    </span>
+
+                    {/* Status */}
+                    <span
+                      className={`
+                        text-xs px-3 py-1 rounded-full font-semibold shadow 
+                        ${
+                          item.status === "Completed"
+                            ? "bg-green-100 text-green-700"
+                            : item.status === "Upcoming"
+                            ? "bg-blue-100 text-blue-700"
+                            : "bg-yellow-100 text-yellow-700"
+                        }
+                      `}
+                    >
+                      {item.status}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                    {item.degree}
+                  </h3>
+
+                  <h4 className="flex items-center gap-2 text-deep-teal text-lg mb-2">
+                    <FaGraduationCap className="text-air-blue" /> {item.school}
                   </h4>
-                  <span className={`inline-block px-3 py-1 text-xs font-bold rounded-full ${
-                    item.status === 'Completed' 
-                      ? 'bg-green-100 text-green-800' 
-                      : item.status === 'Upcoming'
-                      ? 'bg-blue-100 text-blue-800'
-                      : 'bg-yellow-100 text-yellow-800'
-                  }`}>
-                    {item.status}
-                  </span>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

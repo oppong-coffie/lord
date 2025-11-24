@@ -11,6 +11,9 @@ import Gallery from './components/Gallery';
 import Impact from './components/Impact';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Publications from './components/Publications';
+import Awards from './components/Awards';
+import Role from './components/Role';
 
 const App = () => {
     useEffect(() => {
@@ -29,7 +32,10 @@ const App = () => {
             <Vision />
             <Impact />
             <Education />
+            <Awards />
+            <Role />
             <Gallery />
+            <Publications />
             <Contact />
             <Footer />
         </div>

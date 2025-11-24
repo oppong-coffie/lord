@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 
 const Gallery = () => {
   const images = [
-    { src: 'https://placehold.co/600x400/72A0C1/white?text=Field+Work', title: 'Field Work' },
-    { src: 'https://placehold.co/400x600/006D77/white?text=Conference', title: 'Conference' },
-    { src: 'https://placehold.co/600x400/72A0C1/white?text=Advocacy', title: 'Advocacy' },
-    { src: 'https://placehold.co/400x600/006D77/white?text=Research', title: 'Research' },
-    { src: 'https://placehold.co/600x400/72A0C1/white?text=Community', title: 'Community' },
-    { src: 'https://placehold.co/400x600/006D77/white?text=Youth', title: 'Youth Engagement' },
-    { src: 'https://placehold.co/600x400/72A0C1/white?text=Analysis', title: 'Data Analysis' },
-    { src: 'https://placehold.co/400x600/006D77/white?text=Presentation', title: 'Presentation' },
+    { src: '/23.jpg', title: 'Field Work' },
+    { src: '/23.jpg', title: 'Conference' },
+    { src: '/23.jpg', title: 'Advocacy' },
+    { src: '/23.jpg', title: 'Research' },
+    { src: '/23.jpg', title: 'Community' },
+    { src: '/23.jpg', title: 'Youth Engagement' },
+    { src: '/23.jpg', title: 'Data Analysis' },
+    { src: '/23.jpg', title: 'Presentation' },
   ];
 
   return (
