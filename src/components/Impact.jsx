@@ -4,7 +4,7 @@ import { FaGlobe, FaHandHoldingHeart, FaUsers, FaLeaf } from 'react-icons/fa';
 const Impact = () => {
   const impacts = [
     {
-      img: '/58.jpg',
+      img: '/51.jpg',
       icon: <FaGlobe className="text-4xl text-air-blue" />,
       title: 'Global Policy',
       description:
@@ -18,7 +18,7 @@ const Impact = () => {
         'Serving as Project advisory board member for sustyvibes, reviewing climate change and health projects to ensure impactful outcomes.',
     },
     {
-      img: '/112.jpg',
+      img: '/272.jpg',
       icon: <FaUsers className="text-4xl text-air-blue" />,
       title: 'Youth Advocacy',
       description:
