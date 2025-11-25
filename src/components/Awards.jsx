@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAward, FaLink } from "react-icons/fa";
+import { FaAward, FaLink, FaTrophy } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 // Award Data
@@ -108,12 +108,18 @@ const Awards = () => {
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
-              {/* 🔶 Turning Gold Plaque (Left) */}
+              {/* 🏆 Champions Cup (Right) */}
               <motion.div
-                className="absolute left-[-70px] top-1/2 -translate-y-1/2 w-40 h-40 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-700 shadow-2xl border border-yellow-300/50"
-                animate={{ rotateY: [0, 180, 360] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              />
+                className="absolute right-[-40px] md:right-[-1px] top-1/2 -translate-y-1/2 text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.6)]"
+                animate={{ 
+                  rotateY: [0, 360],
+                }}
+                transition={{ 
+                  duration: 8, repeat: Infinity, ease: "linear" 
+                }}
+              >
+                <FaTrophy size={100} />
+              </motion.div>
 
               {/* Shimmer */}
               <motion.div

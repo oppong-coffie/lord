@@ -8,8 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <h2 className="text-3xl font-bold text-air-blue mb-4">
-              Lord<span className="text-white">.</span>
-            </h2>
+<img src="/logo.png" className="w-16 rounded-full h-16" alt="" />            </h2>
             <p className="text-gray-400 mb-6 max-w-sm">
               Bridging the gap between international decisions on climate change and the reality on the ground.
             </p>

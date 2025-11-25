@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 
 const Gallery = () => {
   const images = [
-    { src: '/23.jpg', title: 'Field Work' },
-    { src: '/23.jpg', title: 'Conference' },
-    { src: '/23.jpg', title: 'Advocacy' },
-    { src: '/23.jpg', title: 'Research' },
-    { src: '/23.jpg', title: 'Community' },
-    { src: '/23.jpg', title: 'Youth Engagement' },
-    { src: '/23.jpg', title: 'Data Analysis' },
-    { src: '/23.jpg', title: 'Presentation' },
+    { src: '/hero4.png', title: 'Presentation Work' },
+    { src: '/hero1.png', title: 'Conference' },
+    { src: '/hero7.jpg', title: 'Advocacy' },
+    { src: '/hero3.png', title: 'Research' },
+    // { src: '/23.jpg', title: 'Community' },
+    // { src: '/23.jpg', title: 'Youth Engagement' },
+    // { src: '/23.jpg', title: 'Data Analysis' },
+    // { src: '/23.jpg', title: 'Presentation' },
   ];
 
   return (

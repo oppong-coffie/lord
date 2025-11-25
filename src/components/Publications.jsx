@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaBook, FaFileAlt, FaUsers, FaChevronDown, FaChevronUp, FaLink } from "react-icons/fa";
+import { 
+  FaBook, 
+  FaFileAlt, 
+  FaUsers, 
+  FaLink, 
+  FaNewspaper, 
+  FaBookOpen, 
+  FaMicrophone 
+} from "react-icons/fa";
 
 const Publications = () => {
-  const tabs = ["Peer-Reviewed Journals", "Consultancy & Reports", "Conference Proceedings"];
+  const tabs = [
+    { name: "Peer-Reviewed Journals", icon: <FaBookOpen /> },
+    { name: "Consultancy & Reports", icon: <FaNewspaper /> },
+    { name: "Conference Proceedings", icon: <FaMicrophone /> }
+  ];
   const [activeTab, setActiveTab] = useState(0);
 
   const sections = [
@@ -178,32 +190,41 @@ const Publications = () => {
   ];
 
   return (
-    <section id="publications" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="publications" className="py-24 bg-deep-teal relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-deep-teal/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-air-blue/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-deep-teal flex justify-center items-center gap-3">
+          <h2 className="text-4xl font-extrabold text-white flex justify-center items-center gap-3">
             <FaBook className="text-air-blue" /> Publications
           </h2>
-          <p className="text-gray-600 mt-3 text-lg">
+          <p className="text-gray-400 mt-3 text-lg max-w-2xl mx-auto">
             A complete record of scholarly publications, policy contributions, and conference outputs.
           </p>
-          <div className="w-24 h-1 bg-air-blue mx-auto mt-4 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-deep-teal to-air-blue mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-10">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {tabs.map((tab, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
               className={`
-                px-5 py-2 mx-2 rounded-full font-semibold transition 
-                ${activeTab === index ? "bg-air-blue text-white shadow" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}
+                flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300
+                ${activeTab === index 
+                  ? "bg-air-blue text-white shadow-[0_0_20px_rgba(114,160,193,0.4)] transform scale-105" 
+                  : "bg-white/5 text-gray-200 hover:bg-white/10 hover:text-white border border-white/10"}
               `}
             >
-              {tab}
+              {tab.icon}
+              {tab.name}
             </button>
           ))}
         </div>
@@ -216,31 +237,36 @@ const Publications = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition shadow-sm"
+              className="group p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-air-blue/50 hover:bg-white/10 transition-all duration-300 shadow-lg"
             >
-              <h3 className="text-lg font-semibold text-deep-teal">
-                {pub.title}
-              </h3>
-              <p className="text-gray-600 mt-1">{pub.authors}</p>
-              <p className="text-gray-500 text-sm mt-1 italic">
-                {pub.journal || pub.details}
-              </p>
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-white group-hover:text-air-blue transition-colors">
+                    {pub.title}
+                  </h3>
+                  <p className="text-gray-200 mt-2 text-sm leading-relaxed">{pub.authors}</p>
+                  <p className="text-gray-200 text-xs mt-2 italic">
+                    {pub.journal || pub.details}
+                  </p>
+                </div>
 
-              <div className="flex items-center justify-between mt-3">
-                <span className="text-sm font-semibold bg-air-blue/10 text-air-blue px-3 py-1 rounded-full">
-                  {pub.year}
-                </span>
+                <div className="flex items-center gap-4 shrink-0">
+                  <span className="text-xs font-bold bg-deep-teal/20 text-teal-300 px-3 py-1 rounded-full border border-deep-teal/30">
+                    {pub.year}
+                  </span>
 
-                {pub.link && (
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-air-blue flex items-center gap-1 hover:underline"
-                  >
-                    <FaLink /> View Publication
-                  </a>
-                )}
+                  {pub.link && (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                      title="View Publication"
+                    >
+                      <FaLink />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

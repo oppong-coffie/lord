@@ -47,7 +47,7 @@ const Impact = () => {
           {impacts.map((item, index) => (
             <div
               key={index}
-              className="group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative"
+              className="group bg-deep-teal border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative"
               data-aos="fade-up"
               data-aos-delay={index * 120}
             >
@@ -63,7 +63,7 @@ const Impact = () => {
               {/* Content */}
               <div className="p-2">
                 <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-2xl font-semibold text-deep-teal mb-2">
+                  <h3 className="text-2xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
                   <div className="rounded-full group-hover:bg-gray-200 transition-all">
@@ -74,7 +74,7 @@ const Impact = () => {
 
                
 
-                <p className="text-gray-600 leading-relaxed text-[15px]">
+                <p className="text-gray-200 leading-relaxed text-[15px]">
                   {item.description}
                 </p>
               </div>
