@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 const Gallery = () => {
   const images = [
     { src: '/hero4.png', title: 'Presentation Work' },
-    { src: '/hero1.png', title: 'Conference' },
+    // { src: '/hero1.png', title: 'Conference' },
     { src: '/hero7.jpg', title: 'Advocacy' },
-    { src: '/hero3.png', title: 'Research' },
+    // { src: '/hero3.png', title: 'Research' },
     // { src: '/23.jpg', title: 'Community' },
     // { src: '/23.jpg', title: 'Youth Engagement' },
     // { src: '/23.jpg', title: 'Data Analysis' },
