@@ -59,7 +59,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6"
+          className="text-4xl md:text-7xl font-bold mb-6"
         >
           {"Offei-Darko Lord".split("").map((char, index) => (
             <motion.span
