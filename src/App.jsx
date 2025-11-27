@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -24,21 +25,23 @@ const App = () => {
     }, []);
 
     return (
-        <div className="font-sans antialiased text-gray-900">
-            <Navbar />
-            <Hero />
-            <About />
-            <Stats />
-            <Vision />
-            <Impact />
-            <Education />
-            <Awards />
-            <Role />
-            <Gallery />
-            <Publications />
-            <Contact />
-            <Footer />
-        </div>
+        <ThemeProvider>
+            <div className="font-sans antialiased text-gray-900">
+                <Navbar />
+                <Hero />
+                <About />
+                {/* <Role /> */}
+                <Stats />
+                <Vision />
+                <Impact />
+                <Education />
+                <Awards />
+                <Gallery />
+                <Publications />
+                <Contact />
+                <Footer />
+            </div>
+        </ThemeProvider>
     );
 };
 

@@ -1,8 +1,11 @@
 import React from "react";
 import { FaGraduationCap, FaLeaf } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTheme } from '../context/ThemeContext';
 
 const Education = () => {
+  const { isDark } = useTheme();
+  
   const educationData = [
     {
       date: "01/2027",
@@ -35,7 +38,9 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="education" className={`py-24 relative overflow-hidden transition-colors ${
+      isDark ? 'bg-black' : 'bg-gradient-to-b from-white to-gray-50'
+    }`}>
 
       {/* Background Glow */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-air-blue/20 blur-[120px] rounded-full"></div>
@@ -50,10 +55,14 @@ const Education = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-deep-teal flex justify-center items-center gap-4">
+          <h2 className={`text-4xl md:text-5xl font-extrabold flex justify-center items-center gap-4 ${
+            isDark ? 'text-air-blue' : 'text-deep-teal'
+          }`}>
             <FaLeaf className="text-air-blue" /> Education
           </h2>
-          <p className="mt-4 text-gray-600 text-lg max-w-xl mx-auto">
+          <p className={`mt-4 text-lg max-w-xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             A refined look at my academic achievements, milestones, and professional training.
           </p>
           <div className="w-28 h-1.5 bg-gradient-to-r from-air-blue to-deep-teal mx-auto mt-6 rounded-full"></div>
@@ -89,7 +98,9 @@ const Education = () => {
                 />
 
                 {/* Content Card */}
-                <div className="flex-1 bg-white/70 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl p-6 md:p-7 transition-all duration-300">
+                <div className={`flex-1 backdrop-blur-xl border rounded-2xl shadow-sm hover:shadow-xl p-6 md:p-7 transition-all duration-300 ${
+                  isDark ? 'bg-gray-800/70 border-gray-700' : 'bg-white/70 border-gray-200'
+                }`}>
                   
                   <div className="flex items-center justify-between mb-3">
                     <span className="px-3 py-1 bg-air-blue text-white text-xs font-semibold rounded-full shadow">
@@ -113,11 +124,15 @@ const Education = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                  <h3 className={`text-xl md:text-2xl font-bold mb-1 ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}>
                     {item.degree}
                   </h3>
 
-                  <h4 className="flex items-center gap-2 text-deep-teal text-lg mb-2">
+                  <h4 className={`flex items-center gap-2 text-lg mb-2 ${
+                    isDark ? 'text-air-blue' : 'text-deep-teal'
+                  }`}>
                     <FaGraduationCap className="text-air-blue" /> {item.school}
                   </h4>
                 </div>

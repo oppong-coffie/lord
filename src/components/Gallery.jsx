@@ -1,8 +1,11 @@
 import React from 'react';
 import { FaLeaf } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const Gallery = () => {
+  const { isDark } = useTheme();
+  
   const images = [
     { src: '/hero4.png', title: 'Presentation Work' },
     // { src: '/hero1.png', title: 'Conference' },
@@ -15,14 +18,20 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className={`py-20 transition-colors ${
+      isDark ? 'bg-gray-900' : 'bg-gray-50'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-teal mb-4 flex items-center justify-center gap-3">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 ${
+            isDark ? 'text-air-blue' : 'text-deep-teal'
+          }`}>
             <FaLeaf className="text-air-blue" /> Gallery
           </h2>
           <div className="w-24 h-1 bg-air-blue mx-auto"></div>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className={`mt-4 max-w-2xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             Capturing moments from field work, conferences, and advocacy events.
           </p>
         </div>

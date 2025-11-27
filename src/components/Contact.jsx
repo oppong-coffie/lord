@@ -1,57 +1,84 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLeaf } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const Contact = () => {
+  const { isDark } = useTheme();
+  
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className={`py-20 transition-colors ${
+      isDark ? 'bg-black' : 'bg-gray-50'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-teal mb-4 flex items-center justify-center gap-3">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 ${
+            isDark ? 'text-air-blue' : 'text-deep-teal'
+          }`}>
             <FaLeaf className="text-air-blue" /> Get in Touch
           </h2>
           <div className="w-24 h-1 bg-air-blue mx-auto"></div>
-          <p className="mt-4 text-gray-600">
+          <p className={`mt-4 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             Interested in collaboration or have a question? Send me a message.
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="zoom-in">
+        <div className={`max-w-2xl mx-auto rounded-2xl shadow-xl overflow-hidden ${
+          isDark ? 'bg-gray-800' : 'bg-white'
+        }`} data-aos="zoom-in">
           <div className="p-8 md:p-12">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    isDark ? 'text-gray-200' : 'text-gray-700'
+                  }`}>Name</label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all"
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all ${
+                      isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900'
+                    }`}
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    isDark ? 'text-gray-200' : 'text-gray-700'
+                  }`}>Email</label>
                   <input 
                     type="email" 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all"
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all ${
+                      isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900'
+                    }`}
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                <label className={`block text-sm font-medium mb-2 ${
+                  isDark ? 'text-gray-200' : 'text-gray-700'
+                }`}>Subject</label>
                 <input 
                   type="text" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all"
+                  className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all ${
+                    isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900'
+                  }`}
                   placeholder="Project Inquiry"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label className={`block text-sm font-medium mb-2 ${
+                  isDark ? 'text-gray-200' : 'text-gray-700'
+                }`}>Message</label>
                 <textarea 
                   rows="4" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all"
+                  className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-air-blue focus:border-transparent outline-none transition-all ${
+                    isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900'
+                  }`}
                   placeholder="Your message here..."
                 ></textarea>
               </div>

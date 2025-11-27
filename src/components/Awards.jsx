@@ -1,6 +1,7 @@
 import React from "react";
 import { FaAward, FaLink, FaTrophy } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTheme } from '../context/ThemeContext';
 
 // Award Data
 const awards = [
@@ -33,13 +34,16 @@ const generatePopSparkles = (count = 30) =>
   }));
 
 const Awards = () => {
+  const { isDark } = useTheme();
   const sparkles = generateSparkles(40);
   const popSparkles = generatePopSparkles(30);
 
   return (
     <section
       id="awards"
-      className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-900 via-deep-teal to-black"
+      className={`py-24 relative overflow-hidden transition-colors ${
+        isDark ? 'bg-gradient-to-br from-black via-gray-900 to-black' : 'bg-gradient-to-br from-slate-900 via-deep-teal to-black'
+      }`}
     >
       {/* ✨ Frequent Pop Sparkles */}
       {popSparkles.map((p) => (

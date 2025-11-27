@@ -1,8 +1,10 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { useTheme } from '../context/ThemeContext';
 
 const Stats = () => {
+  const { isDark } = useTheme();
   const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -16,7 +18,9 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-16 bg-deep-teal text-white relative overflow-hidden" ref={ref}>
+    <section className={`py-16 text-white relative overflow-hidden transition-colors ${
+      isDark ? 'bg-gray-800' : 'bg-deep-teal'
+    }`} ref={ref}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
       

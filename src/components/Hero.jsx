@@ -1,8 +1,11 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const Hero = () => {
+  const { isDark } = useTheme();
+  
   // Generate random particles
   const particles = Array.from({ length: 20 }).map((_, i) => ({
     id: i,
@@ -13,12 +16,17 @@ const Hero = () => {
   }));
 
   return (
-    <section id="home" className="h-screen flex items-center justify-center bg-linear-to-br from-deep-teal to-air-blue text-white relative overflow-hidden">
+    <section 
+      id="home" 
+      className={`h-screen flex items-center justify-center text-white relative overflow-hidden transition-colors ${
+        isDark ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-linear-to-br from-deep-teal to-air-blue'
+      }`}
+    >
       {/* Floating Particles */}
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute bg-white/20 rounded-full" // Increased opacity base
+          className={isDark ? 'absolute bg-white/30 rounded-full' : 'absolute bg-white/20 rounded-full'}
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -28,7 +36,7 @@ const Hero = () => {
           animate={{
             y: [0, -100, 0],
             x: [0, Math.random() * 50 - 25, 0],
-            opacity: [0.4, 0.8, 0.4], // Increased opacity range
+            opacity: isDark ? [0.5, 0.9, 0.5] : [0.4, 0.8, 0.4],
           }}
           transition={{
             duration: particle.duration,
@@ -90,7 +98,11 @@ const Hero = () => {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-deep-teal px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors"
+            className={`px-8 py-3 rounded-full font-bold shadow-lg transition-colors ${
+              isDark 
+                ? 'bg-white text-black hover:bg-gray-200' 
+                : 'bg-white text-deep-teal hover:bg-gray-100'
+            }`}
           >
             Get in Touch
           </motion.a>

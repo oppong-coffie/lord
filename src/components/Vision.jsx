@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaLeaf, FaLightbulb, FaUsers, FaGlobe, FaHandHoldingHeart, FaQuoteLeft } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const Vision = () => {
+  const { isDark } = useTheme();
+  
   const cards = [
     {
       icon: <FaLightbulb />,
@@ -26,14 +29,20 @@ const Vision = () => {
   ];
 
   return (
-    <section id="vision" className="py-20 bg-gray-50">
+    <section id="vision" className={`py-20 transition-colors ${
+      isDark ? 'bg-black' : 'bg-gray-50'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-deep-teal mb-4 flex items-center justify-center gap-3">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 ${
+            isDark ? 'text-air-blue' : 'text-deep-teal'
+          }`}>
             <FaLeaf className="text-air-blue" /> Vision
           </h2>
           <div className="w-24 h-1 bg-air-blue mx-auto"></div>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className={`mt-4 max-w-2xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             Driven by a passion for sustainability and social justice, I strive to create lasting impact through innovation and leadership.
           </p>
         </div>
@@ -42,15 +51,23 @@ const Vision = () => {
           {cards.map((card, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-air-blue"
+              className={`p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-air-blue ${
+                isDark ? 'bg-gray-800' : 'bg-white'
+              }`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="text-4xl text-deep-teal mb-6">
+              <div className={`text-4xl mb-6 ${
+                isDark ? 'text-air-blue' : 'text-deep-teal'
+              }`}>
                 {card.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className={`text-xl font-bold mb-3 ${
+                isDark ? 'text-white' : 'text-gray-900'
+              }`}>{card.title}</h3>
+              <p className={`leading-relaxed ${
+                isDark ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 {card.desc}
               </p>
             </div>
@@ -58,7 +75,9 @@ const Vision = () => {
         </div>
 
         {/* Redesigned Core Philosophy Section */}
-        <div className="mt-20 relative rounded-3xl overflow-hidden bg-deep-teal text-white shadow-2xl" data-aos="zoom-in">
+        <div className={`mt-20 relative rounded-3xl overflow-hidden text-white shadow-2xl ${
+          isDark ? 'bg-gray-800' : 'bg-deep-teal'
+        }`} data-aos="zoom-in">
           {/* Decorative Background */}
           <div className="absolute top-0 left-0 opacity-10 pointer-events-none">
              <FaQuoteLeft className="text-xl absolute -top-10 -left-10 transform -rotate-12" />

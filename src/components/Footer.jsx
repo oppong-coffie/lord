@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaLinkedin, FaTwitter, FaEnvelope, FaGithub, FaInstagram } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
+  const { isDark } = useTheme();
+  
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

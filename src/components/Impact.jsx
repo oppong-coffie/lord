@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaGlobe, FaHandHoldingHeart, FaUsers, FaLeaf } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const Impact = () => {
+  const { isDark } = useTheme();
+  
   const impacts = [
     {
       img: '/51.jpg',
@@ -27,16 +30,22 @@ const Impact = () => {
   ];
 
   return (
-    <section id="impact" className="py-24 bg-white">
+    <section id="impact" className={`py-24 transition-colors ${
+      isDark ? 'bg-gray-900' : 'bg-white'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center mb-20" data-aos="fade-up">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-deep-teal mb-4 flex items-center justify-center gap-3">
+          <h2 className={`text-4xl md:text-5xl font-extrabold mb-4 flex items-center justify-center gap-3 ${
+            isDark ? 'text-air-blue' : 'text-deep-teal'
+          }`}>
             <FaLeaf className="text-air-blue" /> 
             Impact & Advocacy
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className={`max-w-2xl mx-auto text-lg ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             A snapshot of contributions made toward global development, policy innovation, and youth empowerment.
           </p>
           <div className="w-28 h-1.5 bg-gradient-to-r from-air-blue to-deep-teal mx-auto mt-6 rounded-full"></div>

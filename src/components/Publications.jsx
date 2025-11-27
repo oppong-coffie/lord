@@ -9,8 +9,11 @@ import {
   FaBookOpen, 
   FaMicrophone 
 } from "react-icons/fa";
+import { useTheme } from '../context/ThemeContext';
 
 const Publications = () => {
+  const { isDark } = useTheme();
+  
   const tabs = [
     { name: "Peer-Reviewed Journals", icon: <FaBookOpen /> },
     { name: "Consultancy & Reports", icon: <FaNewspaper /> },
@@ -190,7 +193,9 @@ const Publications = () => {
   ];
 
   return (
-    <section id="publications" className="py-24 bg-deep-teal relative overflow-hidden">
+    <section id="publications" className={`py-24 relative overflow-hidden transition-colors ${
+      isDark ? 'bg-gray-800' : 'bg-deep-teal'
+    }`}>
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-deep-teal/20 rounded-full blur-3xl"></div>
