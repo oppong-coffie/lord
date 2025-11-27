@@ -10,7 +10,6 @@ const About = () => {
           {/* Image Side - Portrait Look */}
           <div className="w-full md:w-1/2 relative flex justify-center" data-aos="fade-right">
             {/* Organic Background Blobs */}
-            <div className="absolute w-80 h-80 bg-deep-teal/5 rounded-full blur-3xl -z-10 translate-x-12 translate-y-12"></div>
             
             <motion.div
               animate={{ y: [0, -15, 0] }}
