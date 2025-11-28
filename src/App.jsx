@@ -15,6 +15,8 @@ import Footer from './components/Footer';
 import Publications from './components/Publications';
 import Awards from './components/Awards';
 import Role from './components/Role';
+import FAQ from './components/FAQ';
+import ChatWidget from './components/ChatWidget';
 
 const App = () => {
     useEffect(() => {
@@ -38,8 +40,10 @@ const App = () => {
                 <Awards />
                 <Gallery />
                 <Publications />
+                <FAQ />
                 <Contact />
                 <Footer />
+                <ChatWidget />
             </div>
         </ThemeProvider>
     );
