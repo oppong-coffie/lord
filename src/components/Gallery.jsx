@@ -7,14 +7,14 @@ const Gallery = () => {
   const { isDark } = useTheme();
   
   const images = [
-    { src: '/hero4.png', title: 'Presentation Work' },
-    // { src: '/hero1.png', title: 'Conference' },
+    { src: '/hero4.png', title: 'Setting Example' },
+    { src: '/lord (1).jpg', title: 'Advisor' },
+    { src: '/lord (2).jpg', title: 'Community' },
     { src: '/hero7.jpg', title: 'Advocacy' },
-    // { src: '/hero3.png', title: 'Research' },
-    // { src: '/23.jpg', title: 'Community' },
-    // { src: '/23.jpg', title: 'Youth Engagement' },
-    // { src: '/23.jpg', title: 'Data Analysis' },
-    // { src: '/23.jpg', title: 'Presentation' },
+    { src: '/lord (3).jpg', title: 'Youth Engagement' },
+    { src: '/lord (4).jpg', title: 'Data Analysis' },
+    { src: '/lord.jpg', title: 'Connectivity' },
+
   ];
 
   return (
