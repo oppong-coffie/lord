@@ -8,7 +8,7 @@ const Gallery = () => {
   
   const images = [
     { src: '/hero4.png', title: 'Setting Example' },
-    { src: '/lord (1).jpg', title: 'Advisor' },
+    { src: '/lord1.png', title: 'Advisor' },
     { src: '/lord (2).jpg', title: 'Community' },
     { src: '/hero7.jpg', title: 'Advocacy' },
     { src: '/lord (3).jpg', title: 'Youth Engagement' },

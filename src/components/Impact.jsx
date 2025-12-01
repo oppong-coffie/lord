@@ -7,7 +7,7 @@ const Impact = () => {
   
   const impacts = [
     {
-      img: '/51.jpg',
+      img: 'lord (4).jpg',
       icon: <FaGlobe className="text-4xl text-air-blue" />,
       title: 'Global Policy',
       description:
@@ -21,7 +21,7 @@ const Impact = () => {
         'Serving as Project advisory board member for sustyvibes, reviewing climate change and health projects to ensure impactful outcomes.',
     },
     {
-      img: '/272.jpg',
+      img: 'lord (3).jpg',
       icon: <FaUsers className="text-4xl text-air-blue" />,
       title: 'Youth Advocacy',
       description:
@@ -61,7 +61,7 @@ const Impact = () => {
               data-aos-delay={index * 120}
             >
               {/* Image */}
-              <div className="h-40 w-full overflow-hidden">
+              <div className="h-50 w-full overflow-hidden">
                 <img
                   src={item.img}
                   alt="Impact"

@@ -145,32 +145,33 @@ const About = () => {
           </div>
         </div>
 
+
         {/* Highlights Section */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
               title: "Global Advocacy",
               emoji: "🌍",
               desc: "Representing youth voices on international platforms.",
-              img: "/23.jpg"
+              img: "lord.jpg"
             },
             {
               title: "Community Action",
               emoji: "🌱",
               desc: "Hands-on work with local communities for sustainable change.",
-              img: "/112.jpg"
+              img: "lord (2).jpg"
             },
-            {
-              title: "Research & Data",
-              emoji: "📊",
-              desc: "Evidence-based approaches to environmental challenges.",
-              img: "/48.jpg"
-            },
+            // {
+            //   title: "Research & Data",
+            //   emoji: "📊",
+            //   desc: "Evidence-based approaches to environmental challenges.",
+            //   img: "/48.jpg"
+            // },
             {
               title: "Mentorship",
               emoji: "🤝",
               desc: "Empowering the next generation of changemakers.",
-              img: "/58.jpg"
+              img: "lord (3).jpg"
             }
           ].map((item, index) => (
             <div 
